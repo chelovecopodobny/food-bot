@@ -7,7 +7,7 @@ bot = telebot.TeleBot("7983748330:AAFh96j12oGQMdm7a_nV5u0PySr0U9uKYiY")
 def main(message):
     bot.send_message(message.chat.id, f"Привет {message.from_user.username}, здесь вы можете составить план еды на неделю. Используй /help когда ничего не поймешь")
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=["help"])
 def main(message):
     bot.send_message(message.chat.id, f"{message.from_user.username}, используй /создать, чтобы создать план (удивительно!!!), используй /план, чтобы посмотреть готовый план")
 
