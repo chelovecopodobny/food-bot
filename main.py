@@ -34,7 +34,7 @@ def choose_meal(call):
     markup.add(types.InlineKeyboardButton("Ужин", callback_data=f"{day}_ужин"))
     bot.edit_message_text(chat_id=call.message.chat.id,
                           message_id=call.message.message_id,
-                          text=f"Вы выбрали {day.capitalize()}. Теперь выберите приём пищи:",
+                          text=f"Вы выбрали {day.capitalize()}. Теперь выбери приём пищи:",
                           reply_markup=markup)
 
 @bot.callback_query_handler(func=lambda call: "_завтрак" in call.data or "_обед" in call.data or "_ужин" in call.data)
@@ -58,7 +58,7 @@ def save_dish(message):
     
     meals[user_id][day][meal] = dish
 
-    bot.send_message(message.chat.id, f"Записала: {dish} на {meal} в {day.capitalize()}! 📝")
+    bot.send_message(message.chat.id, f"Записал: {dish} на {meal} в {day.capitalize()}! 📝")
 
 # Добавим команду чтобы посмотреть свой список
 @bot.message_handler(commands=["план"])
